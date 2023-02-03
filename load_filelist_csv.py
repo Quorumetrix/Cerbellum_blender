@@ -7,12 +7,12 @@ import os
 x_scale = -0.055221
 y_scale = -0.055221
 z_scale = -0.055221
-
+ 
 file_dir = 'Z:/Collaboration_data/Lee_lab/cerebellum_mesh_lq_210422/'
 csv_filename = 'file_list.csv'
 
-# Camera motion: static, pan or orbit
-cam_motion = 'pan'
+# Camera motion: static, angled,  pan or orbit
+cam_motion = 'angled'
 
 
 def recursive_layer_collection(layer_coll, coll_name):
@@ -148,6 +148,10 @@ def select_camera(motion='pan'):
     elif motion == 'orbit':
 
         bpy.context.scene.camera = bpy.context.scene.objects.get('Camera.orbit')
+        
+    elif motion == 'angled':
+
+        bpy.context.scene.camera = bpy.context.scene.objects.get('Camera.angled')
 
 
 '''
